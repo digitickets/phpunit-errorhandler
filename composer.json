@@ -1,6 +1,7 @@
 {
   "name": "rquadling/phpunit-errorhandler",
   "description": "A simple trait to add to your PHPUnit test allowing you to track and test PHP errors, warnings and notices",
+  "license": "CPL-1.0",
   "authors": [
     {
       "name": "Richard Quadling",
