@@ -24,7 +24,7 @@ class tests extends \PHPUnit_Framework_TestCase
 
     /**
      * @expectedException PHPUnit_Framework_AssertionFailedError
-     * @expectedExceptionMessage Error with level 1024 and message 'Unknown E_USER_WARNING' not found in
+     * @expectedExceptionMessage Error with level 1024 and message 'Unknown E_USER_WARNING' not found in array
      */
     public function testAssertError()
     {

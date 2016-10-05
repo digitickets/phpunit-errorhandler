@@ -31,7 +31,7 @@ trait ErrorHandler
                 return;
             }
         }
-        $this->fail("Error with level {$errno} and message '{$errstr}' not found in ", var_export($this->errors, true));
+        $this->fail("Error with level {$errno} and message '{$errstr}' not found in ".var_export($this->errors, true));
     }
 
     /**
