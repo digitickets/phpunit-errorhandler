@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Class testClassForRecoverableError
+ * Class testClassForRecoverableError.
  */
 class testClassForRecoverableError
 {

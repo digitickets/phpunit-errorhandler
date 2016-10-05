@@ -1,4 +1,5 @@
 <?php
+
 use RQuadling\PHPUnit\ErrorHandler;
 
 class tests extends \PHPUnit_Framework_TestCase
@@ -40,7 +41,7 @@ class tests extends \PHPUnit_Framework_TestCase
     public function testPHPGeneratedRecoverableErrorIsCaptured()
     {
         require __DIR__.'/_files/testClassForRecoverableError.php';
-        $it = new ArrayIterator(new testClassForRecoverableError);
+        $it = new ArrayIterator(new testClassForRecoverableError());
         $it->append('will not work');
         $this->assertError('ArrayIterator::append(): Cannot append properties to objects, use ArrayIterator::offsetSet() instead', E_RECOVERABLE_ERROR);
     }

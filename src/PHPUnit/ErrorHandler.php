@@ -1,16 +1,15 @@
 <?php
+
 namespace RQuadling\PHPUnit;
 
 /**
- * Class ErrorHandling
+ * Class ErrorHandling.
  *
  * To activate PHPUnit error handling:
  * 1. Add 'use \DigiTickets\PHPUnit\ErrorHandler;' to your unit test.
  * 2. Call $this->setUpErrorHandler(); from within the unit test's setUp() method.
  *
  * This code is based upon http://www.sitepoint.com/testing-error-conditions-with-phpunit/
- *
- * @package RQuadling\PHPUnit
  */
 trait ErrorHandler
 {
@@ -36,7 +35,7 @@ trait ErrorHandler
     }
 
     /**
-     * Error handler for PHPUnit
+     * Error handler for PHPUnit.
      *
      * @param int    $errno
      * @param string $errstr
