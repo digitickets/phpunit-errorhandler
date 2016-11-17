@@ -1,9 +1,9 @@
-[![Scrutinizer Code Quality](https://img.shields.io/scrutinizer/g/rquadling/phpunit-errorhandler.svg?style=plastic)](https://scrutinizer-ci.com/g/rquadling/phpunit-errorhandler/?branch=master)
-[![Scrutinizer Coverage](https://img.shields.io/scrutinizer/coverage/g/rquadling/phpunit-errorhandler.svg?style=plastic)](https://scrutinizer-ci.com/coverage/g/rquadling/phpunit-errorhandler/?branch=master)
-[![Scrutinizer Build Status](https://img.shields.io/scrutinizer/build/g/rquadling/phpunit-errorhandler.svg?style=plastic)](https://scrutinizer-ci.com/build/g/rquadling/phpunit-errorhandler/?branch=master)
-[![Travid Build Status](https://img.shields.io/travis/rquadling/phpunit-errorhandler.svg?style=plastic)](https://travis-ci.org/rquadling/phpunit-errorhandler)
-[![Latest Stable Version](https://img.shields.io/packagist/v/rquadling/phpunit-errorhandler.svg?style=plastic)](https://packagist.org/packages/rquadling/phpunit-errorhandler)
-[![Packagist](https://img.shields.io/packagist/dt/rquadling/phpunit-errorhandler.svg?style=plastic)](https://packagist.org/packages/rquadling/phpunit-errorhandler)
+[![Scrutinizer Code Quality](https://img.shields.io/scrutinizer/g/digitickets/phpunit-errorhandler.svg?style=plastic)](https://scrutinizer-ci.com/g/digitickets/phpunit-errorhandler/?branch=master)
+[![Scrutinizer Coverage](https://img.shields.io/scrutinizer/coverage/g/digitickets/phpunit-errorhandler.svg?style=plastic)](https://scrutinizer-ci.com/coverage/g/digitickets/phpunit-errorhandler/?branch=master)
+[![Scrutinizer Build Status](https://img.shields.io/scrutinizer/build/g/digitickets/phpunit-errorhandler.svg?style=plastic)](https://scrutinizer-ci.com/build/g/digitickets/phpunit-errorhandler/?branch=master)
+[![Travid Build Status](https://img.shields.io/travis/digitickets/phpunit-errorhandler.svg?style=plastic)](https://travis-ci.org/digitickets/phpunit-errorhandler)
+[![Latest Stable Version](https://img.shields.io/packagist/v/digitickets/phpunit-errorhandler.svg?style=plastic)](https://packagist.org/packages/digitickets/phpunit-errorhandler)
+[![Packagist](https://img.shields.io/packagist/dt/digitickets/phpunit-errorhandler.svg?style=plastic)](https://packagist.org/packages/digitickets/phpunit-errorhandler)
 
 Richard Quadling's PHPUnit ErrorHandler
 =======================================
@@ -19,7 +19,7 @@ Here is an example use case:
 
 ```php
 <?php
-use RQuadling\PHPUnit\ErrorHandler;
+use DigiTickets\PHPUnit\ErrorHandler;
 
 class tests extends \PHPUnit_Framework_TestCase
 {

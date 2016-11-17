@@ -1,5 +1,5 @@
 {
-  "name": "rquadling/phpunit-errorhandler",
+  "name": "digitickets/phpunit-errorhandler",
   "description": "A simple trait to add to your PHPUnit test allowing you to track and test PHP errors, warnings and notices",
   "license": "CPL-1.0",
   "authors": [
@@ -13,7 +13,7 @@
   },
   "autoload": {
     "psr-4": {
-      "RQuadling\\": ".\\src\\"
+      "DigiTickets\\PHPUnit\\": ".\\src\\"
     }
   },
   "scripts": {

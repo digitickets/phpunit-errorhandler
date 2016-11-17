@@ -1,6 +1,6 @@
 <?php
 
-namespace RQuadling\PHPUnit;
+namespace DigiTickets\PHPUnit;
 
 /**
  * Class ErrorHandling.

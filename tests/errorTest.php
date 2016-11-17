@@ -1,6 +1,6 @@
 <?php
 
-use RQuadling\PHPUnit\ErrorHandler;
+use DigiTickets\PHPUnit\ErrorHandler;
 
 class tests extends \PHPUnit_Framework_TestCase
 {
