@@ -21,7 +21,7 @@ Here is an example use case:
 <?php
 use DigiTickets\PHPUnit\ErrorHandler;
 
-class tests extends \PHPUnit_Framework_TestCase
+class TestErrorHandling extends \PHPUnit\Framework\TestCase
 {
     use ErrorHandler;
 

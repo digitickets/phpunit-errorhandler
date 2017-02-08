@@ -28,7 +28,7 @@ trait ErrorHandler
     {
         foreach ($this->errors as $error) {
             if ($error['errstr'] === $errstr && $error['errno'] === $errno) {
-                return;
+                return $this->assertTrue(true);
             }
         }
         $this->fail("Error with level {$errno} and message '{$errstr}' not found in ".var_export($this->errors, true));
