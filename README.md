@@ -5,8 +5,8 @@
 [![Latest Stable Version](https://img.shields.io/packagist/v/digitickets/phpunit-errorhandler.svg?style=plastic)](https://packagist.org/packages/digitickets/phpunit-errorhandler)
 [![Packagist](https://img.shields.io/packagist/dt/digitickets/phpunit-errorhandler.svg?style=plastic)](https://packagist.org/packages/digitickets/phpunit-errorhandler)
 
-Richard Quadling's PHPUnit ErrorHandler
-=======================================
+PHPUnit ErrorHandler
+====================
 
 An alternative approach to unit testing PHP errors.
 
@@ -25,12 +25,6 @@ class TestErrorHandling extends \PHPUnit\Framework\TestCase
 {
     use ErrorHandler;
 
-    protected function setUp()
-    {
-        // Set the error handler.
-        $this->setUpErrorHandler();
-    }
-
     public function testSomething()
     {
         // Run something that will produce an error, warning or notice.
@@ -39,3 +33,20 @@ class TestErrorHandling extends \PHPUnit\Framework\TestCase
     }
 }
 ```
+
+Upgrading from V3.0.0 to V4.0.0
+===============================
+
+Thanks to [imbrish](https://github.com/digitickets/phpunit-errorhandler/issues/1), the upgrade is extremely simple.
+
+In previous versions, you were required to have the following setup logic. 
+
+    protected function setUp()
+    {
+        // Set the error handler.
+        $this->setUpErrorHandler();
+    }
+
+Now you don't. You can remove the `$this->setUpErrorHandler();` call. If you now have an empty `setup()` function,
+you can remove that also!
+
