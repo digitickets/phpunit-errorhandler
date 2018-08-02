@@ -29,14 +29,26 @@ class tests extends \PHPUnit\Framework\TestCase
         $keys = [1, 2, 3];
         $keys[1] = $keys[4];
 
-        $this->assertError('Undefined offset: 4', E_NOTICE);
+        $this->assertError(
+            defined('HHVM_VERSION')
+                ? 'Undefined index: 4'
+                : 'Undefined offset: 4',
+            E_NOTICE
+        );
     }
 
     public function testPHPGeneratedRecoverableErrorIsCaptured()
     {
-        $x = function() { return 1; };
-        print (string) $x;
-        $this->assertError('Object of class Closure could not be converted to string', E_RECOVERABLE_ERROR);
+        $x = function () {
+            return 1;
+        };
+        print (string)$x;
+        $this->assertError(
+            defined('HHVM_VERSION')
+                ? 'Object of class Closure$tests::testPHPGeneratedRecoverableErrorIsCaptured;4 could not be converted to string'
+                : 'Object of class Closure could not be converted to string',
+            E_RECOVERABLE_ERROR
+        );
     }
 
     public function testPHPGeneratedWarningIsCaptured()
