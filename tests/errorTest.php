@@ -77,4 +77,23 @@ class tests extends \PHPUnit\Framework\TestCase
     {
         $this->assertNoErrors();
     }
+
+    public function testAssertNoErrorsShouldFailWhenErrorRaised()
+    {
+        // First error generated
+        trigger_error('This is an error.', E_USER_WARNING);
+
+        $this->expectException(\PHPUnit\Framework\AssertionFailedError::class);
+        $this->expectExceptionMessage('1 error generated');
+
+        $this->assertNoErrors();
+
+        // Second error generated
+        trigger_error('This is another error.', E_USER_WARNING);
+
+        $this->expectException(\PHPUnit\Framework\AssertionFailedError::class);
+        $this->expectExceptionMessage('2 errors generated');
+
+        $this->assertNoErrors();
+    }
 }

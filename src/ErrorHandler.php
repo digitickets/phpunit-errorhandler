@@ -40,7 +40,14 @@ trait ErrorHandler
      */
     public function assertNoErrors()
     {
-        $this->assertEmpty($this->errors, sprintf('$s errors generated.', number_format(count($this->errors))));
+        $this->assertEmpty(
+            $this->errors,
+            sprintf(
+                '%s error%s generated.',
+                number_format(count($this->errors)),
+                count($this->errors) === 1 ? '' : 's'
+            )
+        );
     }
 
     /**
