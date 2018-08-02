@@ -1,9 +1,15 @@
-[![Scrutinizer Code Quality](https://img.shields.io/scrutinizer/g/digitickets/phpunit-errorhandler.svg?style=plastic)](https://scrutinizer-ci.com/g/digitickets/phpunit-errorhandler/?branch=master)
-[![Scrutinizer Coverage](https://img.shields.io/scrutinizer/coverage/g/digitickets/phpunit-errorhandler.svg?style=plastic)](https://scrutinizer-ci.com/coverage/g/digitickets/phpunit-errorhandler/?branch=master)
-[![Scrutinizer Build Status](https://img.shields.io/scrutinizer/build/g/digitickets/phpunit-errorhandler.svg?style=plastic)](https://scrutinizer-ci.com/build/g/digitickets/phpunit-errorhandler/?branch=master)
-[![Travid Build Status](https://img.shields.io/travis/digitickets/phpunit-errorhandler.svg?style=plastic)](https://travis-ci.org/digitickets/phpunit-errorhandler)
-[![Latest Stable Version](https://img.shields.io/packagist/v/digitickets/phpunit-errorhandler.svg?style=plastic)](https://packagist.org/packages/digitickets/phpunit-errorhandler)
-[![Packagist](https://img.shields.io/packagist/dt/digitickets/phpunit-errorhandler.svg?style=plastic)](https://packagist.org/packages/digitickets/phpunit-errorhandler)
+[![Travis Build Status](https://img.shields.io/travis/digitickets/phpunit-errorhandler.svg?style=for-the-badge&logo=travis)](https://travis-ci.org/digitickets/phpunit-errorhandler)
+[![Scrutinizer Build Status](https://img.shields.io/scrutinizer/build/g/digitickets/phpunit-errorhandler.svg?style=for-the-badge&logo=scrutinizer)](https://scrutinizer-ci.com/g/digitickets/phpunit-errorhandler/)
+[![Scrutinizer Code Coverage](https://img.shields.io/scrutinizer/coverage/g/digitickets/phpunit-errorhandler.svg?style=for-the-badge&logo=scrutinizer)](https://scrutinizer-ci.com/g/digitickets/phpunit-errorhandler/)
+[![GitHub issues](https://img.shields.io/github/issues/digitickets/phpunit-errorhandler.svg?style=for-the-badge&logo=github)](https://github.com/digitickets/phpunit-errorhandler/issues)
+
+[![PHP Version](https://img.shields.io/packagist/php-v/digitickets/phpunit-errorhandler.svg?style=for-the-badge)](https://github.com/digitickets/phpunit-errorhandler)
+[![Stable Version](https://img.shields.io/packagist/v/digitickets/phpunit-errorhandler.svg?style=for-the-badge&label=Latest)](https://packagist.org/packages/digitickets/phpunit-errorhandler)
+
+[![Total Packagist Downloads](https://img.shields.io/packagist/dt/digitickets/phpunit-errorhandler.svg?style=for-the-badge&label=Total+downloads)](https://packagist.org/packages/digitickets/phpunit-errorhandler)
+[![Monthly Packagist Downloads](https://img.shields.io/packagist/dm/digitickets/phpunit-errorhandler.svg?style=for-the-badge&label=Monthly+downloads)](https://packagist.org/packages/digitickets/phpunit-errorhandler)
+[![Daily Packagist Downloads](https://img.shields.io/packagist/dd/digitickets/phpunit-errorhandler.svg?style=for-the-badge&label=Daily+downloads)](https://packagist.org/packages/digitickets/phpunit-errorhandler)
+
 
 PHPUnit ErrorHandler
 ====================
