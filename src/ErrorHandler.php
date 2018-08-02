@@ -22,40 +22,46 @@ trait ErrorHandler
      *
      * @param string $errstr
      * @param int $errno
-     *
-     * @return bool
      */
-    public function assertError($errstr, $errno)
+    public function assertError(string $errstr, int $errno)
     {
         foreach ($this->errors as $error) {
             if ($error['errstr'] === $errstr && $error['errno'] === $errno) {
-                return $this->assertTrue(true);
+                $this->assertTrue(true);
+
+                return;
             }
         }
         $this->fail("Error with level {$errno} and message '{$errstr}' not found in ".var_export($this->errors, true));
     }
 
     /**
-     * Error handler for PHPUnit.
-     *
-     * @param int    $errno
-     * @param string $errstr
-     * @param string $errfile
-     * @param int    $errline
-     * @param array  $errcontext
+     * Assert that no errors were generated.
      */
-    public function errorHandler($errno, $errstr, $errfile, $errline, $errcontext)
+    public function assertNoErrors()
     {
-        $this->errors[] = compact('errno', 'errstr', 'errfile', 'errline', 'errcontext');
+        $this->assertEmpty($this->errors, sprintf('$s errors generated.', number_format(count($this->errors))));
     }
 
     /**
      * Activate PHPUnit error handler.
+     *
      * @before
      */
     protected function setUpErrorHandler()
     {
         $this->errors = [];
-        set_error_handler([$this, 'errorHandler'], -1);
+        set_error_handler(
+            function (int $errno, string $errstr, string $errfile, int $errline, array $errcontext) {
+                $this->errors[] = [
+                    'errno' => $errno,
+                    'errstr' => $errstr,
+                    'errfile' => $errfile,
+                    'errline' => $errline,
+                    'errcontext' => $errcontext,
+                ];
+            },
+            -1
+        );
     }
 }

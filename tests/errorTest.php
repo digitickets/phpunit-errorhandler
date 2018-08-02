@@ -16,13 +16,6 @@ class tests extends \PHPUnit\Framework\TestCase
         ];
     }
 
-    public function testAssertErrorHandler()
-    {
-        $this->errorHandler(E_USER_NOTICE, 'Testing ErrorHandler', __FILE__, __LINE__, []);
-
-        $this->assertError('Testing ErrorHandler', E_USER_NOTICE);
-    }
-
     public function testAssertError()
     {
         $this->expectException(\PHPUnit\Framework\AssertionFailedError::class);
@@ -71,9 +64,8 @@ class tests extends \PHPUnit\Framework\TestCase
         $this->assertError($message, $errorType);
     }
 
-    protected function setUp()
+    public function testNoErrorsAreCapturedWhenNoErrorsAreGenerated()
     {
-        // Set the error handler.
-        $this->setUpErrorHandler();
+        $this->assertNoErrors();
     }
 }
