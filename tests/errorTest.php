@@ -34,9 +34,9 @@ class tests extends \PHPUnit\Framework\TestCase
 
     public function testPHPGeneratedRecoverableErrorIsCaptured()
     {
-        @assert('a=b+c');
-        $this->assertError('assert(): Failure evaluating code: 
-a=b+c', E_RECOVERABLE_ERROR);
+        $x = function() { return 1; };
+        print (string) $x;
+        $this->assertError('Object of class Closure could not be converted to string', E_RECOVERABLE_ERROR);
     }
 
     public function testPHPGeneratedWarningIsCaptured()
