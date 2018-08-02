@@ -25,11 +25,17 @@ class TestErrorHandling extends \PHPUnit\Framework\TestCase
 {
     use ErrorHandler;
 
-    public function testSomething()
+    public function testSomethingGeneratedAnError()
     {
         // Run something that will produce an error, warning or notice.
         // For example, a E_USER_NOTICE of 'Incompatible type ignored' can be tested as follows:
         $this->assertError('Incompatible type ignored', E_USER_NOTICE);
+    }
+
+    public function testSomethingDidNotGenerateAnError()
+    {
+        // Run something that should not produce an error, warning or notice.
+        $this->assertNoErrors();
     }
 }
 ```
