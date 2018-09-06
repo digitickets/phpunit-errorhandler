@@ -1,24 +1,27 @@
 <?php
 
-use DigiTickets\PHPUnit\ErrorHandler;
+namespace DigiTicketsTests\PHPUnit\ErrorHandler;
 
-class tests extends \PHPUnit\Framework\TestCase
+use DigiTickets\PHPUnit\ErrorHandler;
+use PHPUnit\Framework\AssertionFailedError;
+
+class ErrorTest extends \PHPUnit\Framework\TestCase
 {
     use ErrorHandler;
 
     public function provideUserErrors()
     {
         return [
-            ['Generated E_USER_ERROR', E_USER_ERROR],
-            ['Generated E_USER_WARNING', E_USER_WARNING],
-            ['Generated E_USER_NOTICE', E_USER_NOTICE],
-            ['Generated E_USER_DEPRECATED', E_USER_DEPRECATED],
+            'E_USER_ERROR' => ['Generated E_USER_ERROR', E_USER_ERROR],
+            'E_USER_WARNING' => ['Generated E_USER_WARNING', E_USER_WARNING],
+            'E_USER_NOTICE' => ['Generated E_USER_NOTICE', E_USER_NOTICE],
+            'E_USER_DEPRECATED' => ['Generated E_USER_DEPRECATED', E_USER_DEPRECATED],
         ];
     }
 
     public function testAssertError()
     {
-        $this->expectException(\PHPUnit\Framework\AssertionFailedError::class);
+        $this->expectException(AssertionFailedError::class);
         $this->expectExceptionMessage('Error with level 1024 and message \'Unknown E_USER_WARNING\' not found in array');
 
         $this->assertError('Unknown E_USER_WARNING', E_USER_NOTICE);
@@ -42,10 +45,10 @@ class tests extends \PHPUnit\Framework\TestCase
         $x = function () {
             return 1;
         };
-        print (string)$x;
+        print (string) $x;
         $this->assertError(
             defined('HHVM_VERSION')
-                ? 'Object of class Closure$tests::testPHPGeneratedRecoverableErrorIsCaptured;4 could not be converted to string'
+                ? 'Object of class Closure$DigiTicketsTests\\PHPUnit\\ErrorHandler\\ErrorTest::testPHPGeneratedRecoverableErrorIsCaptured;4 could not be converted to string'
                 : 'Object of class Closure could not be converted to string',
             E_RECOVERABLE_ERROR
         );
@@ -83,7 +86,7 @@ class tests extends \PHPUnit\Framework\TestCase
         // First error generated
         trigger_error('This is an error.', E_USER_WARNING);
 
-        $this->expectException(\PHPUnit\Framework\AssertionFailedError::class);
+        $this->expectException(AssertionFailedError::class);
         $this->expectExceptionMessage('1 error generated');
 
         $this->assertNoErrors();
@@ -91,7 +94,7 @@ class tests extends \PHPUnit\Framework\TestCase
         // Second error generated
         trigger_error('This is another error.', E_USER_WARNING);
 
-        $this->expectException(\PHPUnit\Framework\AssertionFailedError::class);
+        $this->expectException(AssertionFailedError::class);
         $this->expectExceptionMessage('2 errors generated');
 
         $this->assertNoErrors();
